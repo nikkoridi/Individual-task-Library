@@ -18,13 +18,14 @@ namespace Library
             ShowBooks();
             ShowReturnedBooks();
             ShowRequests();
+            ShowReaders();
             l = new Librarian();
         }
 
-        private void LibrarianForm_Load(object sender, EventArgs e)
+        private void ShowReaders()
         {
             foreach (string s in LibraryData.GetReaders())
-                listBox3.Items.Add(s);
+                ReadersList.Items.Add(s);
         }
 
         // Состояние чекбокса доступности книги

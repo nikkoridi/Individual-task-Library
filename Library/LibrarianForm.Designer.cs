@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.ReadersList = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.AvailableСheck = new System.Windows.Forms.CheckBox();
             this.ViewDescription = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.ChangeBookStatusBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.ViewRequestBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BooksList
@@ -171,14 +172,14 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Описание";
             // 
-            // listBox3
+            // ReadersList
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 15;
-            this.listBox3.Location = new System.Drawing.Point(1058, 37);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(247, 424);
-            this.listBox3.TabIndex = 15;
+            this.ReadersList.FormattingEnabled = true;
+            this.ReadersList.ItemHeight = 15;
+            this.ReadersList.Location = new System.Drawing.Point(1058, 37);
+            this.ReadersList.Name = "ReadersList";
+            this.ReadersList.Size = new System.Drawing.Size(247, 424);
+            this.ReadersList.TabIndex = 15;
             // 
             // label6
             // 
@@ -297,11 +298,21 @@
             this.ViewRequestBtn.UseVisualStyleBackColor = true;
             this.ViewRequestBtn.Click += new System.EventHandler(this.ViewRequestBtn_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1058, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 15);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Читатели";
+            // 
             // LibrarianForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 473);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ViewRequestBtn);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.ChangeBookStatusBtn);
@@ -314,7 +325,7 @@
             this.Controls.Add(this.ViewDescription);
             this.Controls.Add(this.AvailableСheck);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.ReadersList);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -331,7 +342,6 @@
             this.Name = "LibrarianForm";
             this.Text = "LibrarianForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LibrarianForm_FormClosed);
-            this.Load += new System.EventHandler(this.LibrarianForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +362,7 @@
         private Label label1;
         private Label label4;
         private Label label5;
-        private ListBox listBox3;
+        private ListBox ReadersList;
         private Label label6;
         private CheckBox AvailableСheck;
         private Button ViewDescription;
@@ -365,5 +375,6 @@
         private Button ChangeBookStatusBtn;
         private Button ExitBtn;
         private Button ViewRequestBtn;
+        private Label label3;
     }
 }
