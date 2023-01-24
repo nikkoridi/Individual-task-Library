@@ -73,9 +73,11 @@ namespace Library
             if (LibraryBooksList.SelectedIndices.Count > 0)
             {
                 int code = GetSelectedBookCode(LibraryBooksList);
+                // Если код книги найден
                 if (code != -1)
                 {
                     Book book = LibraryData.FindBookByCode(code);
+                    // Если книга найдена
                     if (book != null)
                     {
                         current.GetBook(book);

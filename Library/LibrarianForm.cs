@@ -170,19 +170,15 @@ namespace Library
         {
             if (ReturnedBooksList.SelectedItems.Count > 0)
             {
-                Book book = LibraryData.FindBookByCode(LibraryData.BookCodeFromString(ReturnedBooksList.SelectedItem.ToString()));
-                if (book.WishingCount() > 0)
+                try
                 {
-                    Reader reader = book.GetFirstWishes();
-                    reader.GetBook(book);
-                    book.DelReader(reader);
-                    LibraryData.DelReturn(ReturnedBooksList.SelectedIndex);
-                    LibraryData.ToFile();
-                    ShowBooks();
+                    l.GetToNextReader(ReturnedBooksList.SelectedIndex, ReturnedBooksList.SelectedItem.ToString());
                     ShowReturnedBooks();
                 }
-                else
-                    MessageBox.Show("Нет желающих получить книгу", "Ошибка");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка");
+                }
             }
         }
 

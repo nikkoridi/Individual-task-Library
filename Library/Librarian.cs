@@ -34,6 +34,22 @@ namespace Library
             LibraryData.ToFile();
         }
 
+        // Передать книгу следующему читателю
+        public void GetToNextReader(int indexReturn, string bookString)
+        {
+            Book book = LibraryData.FindBookByCode(LibraryData.BookCodeFromString(bookString));
+            if (book.WishingCount() > 0)
+            {
+                Reader reader = LibraryData.FindReaderByCode(book.GetFirstWishes().GetCardCode());
+                reader.GetBook(book);
+                book.DelReader(reader);
+                LibraryData.DelReturn(indexReturn);
+                LibraryData.ToFile();
+            }
+            else
+                throw new Exception("Нет желающих получить книгу");
+        }
+
         // Изменить статус книги
         public void ChangeBookStatus(int index)
         {
