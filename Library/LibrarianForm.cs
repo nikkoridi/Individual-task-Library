@@ -112,6 +112,7 @@ namespace Library
             if (BooksList.SelectedItems.Count > 0)
             {
                 l.DelBook(BooksList.SelectedIndex);
+                ShowBooks();
             }
         }
 
