@@ -40,6 +40,7 @@ namespace Library
                 {
                     Reader reader = new Reader(SurnameField.Text, NameField.Text, PatronymicField.Text, DateField.Value, PhoneField.Value.ToString());
                     LibraryData.AddReader(reader);
+                    LibraryData.CurrentReaderCode = reader.CardCode;
                     LibraryData.ToFile();
                     created = true;
                 }
@@ -63,7 +64,9 @@ namespace Library
         {
             CreateNewReader();
             if (created)
+            {
                 ChangeForm();
+            }
         }
 
         private void ReaderUpForm_FormClosed(object sender, FormClosedEventArgs e)

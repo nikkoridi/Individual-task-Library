@@ -18,6 +18,7 @@ namespace Library
             LoadData();
         }
 
+        // Загрузка данных из файлов
         private void LoadData()
         {
             try
@@ -30,6 +31,7 @@ namespace Library
             }
         }
 
+        // Переход на форму регистрации/входа читателя
         private void ReaderModeBtn_Click(object sender, EventArgs e)
         {
             Form1.ActiveForm.Hide();
@@ -37,6 +39,7 @@ namespace Library
             readerLog.Show();
         }
 
+        // Переход на форму библиотекаря
         private void LibrarianModeBtn_Click(object sender, EventArgs e)
         {
             Form1.ActiveForm.Hide();
@@ -44,6 +47,7 @@ namespace Library
             librarian.Show();
         }
 
+        // При закрытии формы закрывать все приложение
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

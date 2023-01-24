@@ -43,6 +43,8 @@ namespace Library
             set { currentReaderCode = value; }
         }
 
+        /* Возвращенные книги */
+
         // Положить книгу к возвращенным
         public static void AddReturn(Book book)
         {
@@ -65,6 +67,8 @@ namespace Library
             returned.RemoveAt(index);
         }
 
+        /* Читатели */
+
         // Добавить читатаеля
         public static void AddReader(Reader reader)
         {
@@ -83,6 +87,8 @@ namespace Library
             }
             return null;
         }
+
+        /* Книги */
 
         // Получить код книги из строки книги
         public static int BookCodeFromString(string text)
@@ -200,6 +206,8 @@ namespace Library
             }
         }
 
+        /* Заявки */
+
         // Удалить заявку
         public static void RemoveRequest(string text)
         {
@@ -214,6 +222,8 @@ namespace Library
         {
             return requests[index];
         }
+
+        /* Получить списки */
 
         // Получить список заявок - строками
         public static List<string> GetRequests()
@@ -259,6 +269,8 @@ namespace Library
             }
             return list;
         }
+
+        /* Работа с файлами */
 
         // Восстановить данные из файлов
         public static void FromFile()

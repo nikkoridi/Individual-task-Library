@@ -22,12 +22,6 @@ namespace Library
             l = new Librarian();
         }
 
-        private void ShowReaders()
-        {
-            foreach (string s in LibraryData.GetReaders())
-                ReadersList.Items.Add(s);
-        }
-
         // Состояние чекбокса доступности книги
         private bool GetCheckAvailable()
         {
@@ -41,6 +35,13 @@ namespace Library
                 BooksList.Items.Clear();
             foreach (string s in LibraryData.GetBooks())
                 BooksList.Items.Add(s);
+        }
+
+        // Вывод читателей
+        private void ShowReaders()
+        {
+            foreach (string s in LibraryData.GetReaders())
+                ReadersList.Items.Add(s);
         }
 
         // Вывод возвращенных книг

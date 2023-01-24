@@ -131,19 +131,26 @@ namespace Library
                     }
                 }
             }
-            /*else
+            else
             {
                 // Книги нет в этой библиотеке
                 // Предложим читателю написать текст заявки, она попадет в список таких заявок в LibraryData
                 // Дальше уже библотекарь будет создавать книгу и добавлять ее в библиотеку
-            }*/
+                ToRequestForm();
+            }
+        }
+
+        // Переход на форму заявки 
+        private void ToRequestForm()
+        {
+            RequestForm requestForm = new RequestForm();
+            requestForm.Show();
         }
 
         // Кнопка перехода на форму заявки
         private void RequestBtn_Click(object sender, EventArgs e)
         {
-            RequestForm requestForm = new RequestForm();
-            requestForm.Show();
+            ToRequestForm();
         }
     }
 }
