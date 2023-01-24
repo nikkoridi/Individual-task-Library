@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Library
 {
-    [Serializable]
+    //[Serializable]
 
     /* Статический класс, который хранит все данные между формами */
     internal static class LibraryData
@@ -301,7 +301,7 @@ namespace Library
                     }
                 }
                 else
-                    Console.WriteLine("Строка пустая");
+                    Console.WriteLine("Один или несколько файлов не найдены/повреждены");
             }
             catch(Exception ex)
             {

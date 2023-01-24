@@ -24,9 +24,9 @@ namespace Library
             {
                 LibraryData.FromFile();
             }
-            catch
+            catch (Exception ex) 
             {
-                MessageBox.Show("Проблема с файлом данных, данные не будут считаны.");
+                MessageBox.Show(ex.Message + '\n' + "Проблема с файлами данных, данные (все или некоторые) не будут считаны.");
             }
         }
 
