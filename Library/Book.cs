@@ -140,9 +140,10 @@ namespace Library
         }
 
         // Строка - для интерфейса
+        // количество_в_очереди 👤 - сколько людей ждут книгу
         public override String ToString()
         {
-            return $"№{GetBookCode()}; \n {title} - {author}; \n {(isAvailable ? "+" : "-")}";
+            return $"№{GetBookCode()}; \n {title} - {author}; \n {(isAvailable ? "+" : "-" + " " + $"{wishing.Count}👤")}";
         }
 
         // Строка, все данные - для интерфейса
