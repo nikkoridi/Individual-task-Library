@@ -33,5 +33,19 @@ namespace Library
             LibraryData.ReturnBook(index);
             LibraryData.ToFile();
         }
+
+        // Изменить статус книги
+        public void ChangeBookStatus(int index)
+        {
+            LibraryData.ChangeBookStatus(index);
+            LibraryData.ToFile();
+        }
+
+        // Отметить заявку как выполненную (она удалится)
+        public void DoneRequest(string request)
+        {
+            LibraryData.RemoveRequest(request);
+            LibraryData.ToFile();
+        }
     }
 }

@@ -114,6 +114,27 @@ namespace Library
             }
         }
 
+        // Вернуть книгу в библиотеку
+        private void ReturnBookBtn_Click(object sender, EventArgs e)
+        {
+            if (ReturnedBooksList.SelectedItems.Count > 0)
+            {
+                l.ReturnBook(ReturnedBooksList.SelectedIndex);
+                ShowBooks();
+                ShowReturnedBooks();
+            }
+        }
+
+        // Изменить доступность книги
+        private void ChangeBookStatusBtn_Click(object sender, EventArgs e)
+        {
+            if (BooksList.SelectedItems.Count > 0)
+            {
+                l.ChangeBookStatus(BooksList.SelectedIndex);
+                ShowBooks();
+            }
+        }
+
         // Посмотреть описание книги
         private void ViewDescription_Click(object sender, EventArgs e)
         {
@@ -144,28 +165,6 @@ namespace Library
             }
         }
 
-        // Вернуть книгу в библиотеку
-        private void ReturnBookBtn_Click(object sender, EventArgs e)
-        {
-            if (ReturnedBooksList.SelectedItems.Count > 0)
-            {
-                l.ReturnBook(ReturnedBooksList.SelectedIndex);
-                ShowBooks();
-                ShowReturnedBooks();
-            }
-        }
-
-        // Изменить доступность книги
-        private void ChangeBookStatusBtn_Click(object sender, EventArgs e)
-        {
-            if (BooksList.SelectedItems.Count > 0)
-            {
-                LibraryData.ChangeBookStatus(BooksList.SelectedIndex);
-                ShowBooks();
-                LibraryData.ToFile();
-            }
-        }
-
         // Передать книгу первому читателю в очереди
         private void GetToNextBtn_Click(object sender, EventArgs e)
         {
@@ -192,9 +191,8 @@ namespace Library
         {
             if (RequestList.SelectedItems.Count > 0)
             {
-                LibraryData.RemoveRequest(RequestList.SelectedItem.ToString());
+                l.DoneRequest(RequestList.SelectedItem.ToString());
                 ShowRequests();
-                LibraryData.ToFile();
             }
         }
 
