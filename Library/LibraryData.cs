@@ -111,7 +111,7 @@ namespace Library
                     {
                         foreach (Book book in books)
                         {
-                            if (book.Author.Contains(text[0]))
+                            if (book.Author.ToLower().Contains(text[0].ToLower()))
                             {
                                 finded.Add(book);
                             }
@@ -122,7 +122,7 @@ namespace Library
                     {
                         foreach (Book book in books)
                         {
-                            if (book.Title.Contains(text[0]))
+                            if (book.Title.ToLower().Contains(text[0].ToLower()))
                             {
                                 finded.Add(book);
                             }
@@ -133,7 +133,7 @@ namespace Library
                     {
                         foreach (Book book in books)
                         {
-                            if (book.Author.Contains(text[0]) && book.Title.Contains(text[1]))
+                            if (book.Author.ToLower().Contains(text[0].ToLower()) && book.Title.ToLower().Contains(text[1].ToLower()))
                             {
                                 finded.Add(book);
                             }
