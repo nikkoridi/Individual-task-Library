@@ -9,6 +9,12 @@ namespace Library
         public LibrarianForm()
         {
             InitializeComponent();
+            OnInit();
+        }
+
+        // Добавление данных формы при загрузке
+        private void OnInit()
+        {
             ShowBooks();
             ShowReturnedBooks();
             ShowRequests();

@@ -20,6 +20,7 @@ namespace Library
             OnInit();
         }
 
+        // Добавление данных формы при загрузке
         private void OnInit()
         {
             ShowBooks();
