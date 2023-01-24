@@ -142,7 +142,8 @@ namespace Library
         {
             if (BooksList.SelectedItems.Count > 0)
             {
-                Book book = LibraryData.FindBookByCode(BooksList.SelectedIndex);
+                // Так как списки формы и LibraryData синхронизированны, можно вызвать по индексу
+                Book book = LibraryData.GetBook(BooksList.SelectedIndex);
                 if (book != null)
                     MessageBox.Show(book.Description);
             }
@@ -153,7 +154,8 @@ namespace Library
         {
             if (BooksList.SelectedItems.Count > 0)
             {
-                Book book = LibraryData.FindBookByCode(BooksList.SelectedIndex);
+                // Так как списки формы и LibraryData синхронизированны, можно вызвать по индексу
+                Book book = LibraryData.GetBook(BooksList.SelectedIndex);
                 if (book != null)
                 {
                     string list = "";
@@ -161,6 +163,8 @@ namespace Library
                     {
                         list += s + "\n";
                     }
+                    if (list.Length == 0)
+                        list = "Нет очереди";
                     MessageBox.Show(list);
                 }
                     
