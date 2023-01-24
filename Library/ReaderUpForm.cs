@@ -40,6 +40,7 @@ namespace Library
                 {
                     Reader reader = new Reader(SurnameField.Text, NameField.Text, PatronymicField.Text, DateField.Value, PhoneField.Value.ToString());
                     LibraryData.AddReader(reader);
+                    // Передаем номер билета в статический класс - чтобы следующая форма нашла этого читателя и его данные
                     LibraryData.CurrentReaderCode = reader.CardCode;
                     LibraryData.ToFile();
                     created = true;
